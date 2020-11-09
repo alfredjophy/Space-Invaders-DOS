@@ -411,9 +411,9 @@ SHIPS::NODE::NODE(char c)			//Player
 	health=20.0;
 	velocity_x=1;
 	velocity_y=0;
-	char a[3][5]={       "  ï¿½  ",
-			     " ï¿½Î» ",
-			     "ï¿½ï¿½Î»ï¿½"   };
+	char a[3][5]={       "  ³  ",
+			     " ÉÎ» ",
+			     "ÅÉÎ»Å"   };
 
 	char clr[3][5]={    0,0,W,0,0,
 			    0,R,R,R,0,
@@ -442,8 +442,8 @@ SHIPS::NODE::NODE()                          //Enemy ships
 	velocity_x=0.8;
 	velocity_y=0.2;
 
-	char a[2][3]={    "Û°ï¿½",
-			  " ï¿½ "  };
+	char a[2][3]={    "Û°Û",
+			  " Ø "  };
 
 	char clr[2][3]={ LB,Y+BLINK,LB,
 			   0,R,0        };
@@ -728,7 +728,7 @@ BULLETS::NODE::NODE(char t,char xn, float yn)
 		case  2 : velocity=1;
 			  color=Y;
 			  damage=-4;
-			  ch='ï¿½';
+			  ch='³';
 			  break;
 
 		case 10 : velocity=0.5;
@@ -1053,28 +1053,28 @@ void box(int x1,int y1,int x2,int y2,char color,char bkg)
 	textcolor(color);
 	textbackground(bkg);
 	gotoxy(x1,y1);
-	cprintf("ï¿½");
+	cprintf("Ú");
 	gotoxy(x2,y1);
-	cprintf("ï¿½");
+	cprintf("¿");
 	gotoxy(x1,y2);
-	cprintf("ï¿½");
+	cprintf("À");
 	gotoxy(x2,y2);
-	cprintf("ï¿½");
+	cprintf("Ù");
 
 	for(i=x1+1;i<x2;++i)
 	{
 		gotoxy(i,y1);
-		cprintf("ï¿½");
+		cprintf("Ä");
 		gotoxy(i,y2);
-		cprintf("ï¿½");
+		cprintf("Ä");
 
 	}
 	for(i=y1+1;i<y2;++i)
 	{
 		gotoxy(x1,i);
-		cprintf("ï¿½");
+		cprintf("³");
 		gotoxy(x2,i);
-		cprintf("ï¿½");
+		cprintf("³");
 	}
 
 
@@ -1139,19 +1139,19 @@ void display_title()		//displays the games title screen
 	int x=10,y=5;
 
 	textcolor(11);
-	gotoxy(x,y++);cprintf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä¿ ï¿½ï¿½ï¿½ï¿½Ä¿ ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ï¿½ ");
-	gotoxy(x,y++);cprintf("ï¿½      ï¿½    ï¿½ ï¿½    ï¿½ ï¿½      ï¿½     ");
-	gotoxy(x,y++);cprintf("ï¿½ï¿½ï¿½ï¿½Ä¿ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä´ ï¿½      ï¿½ï¿½ï¿½ï¿½ï¿½ ");
-	gotoxy(x,y++);cprintf("     ï¿½ ï¿½      ï¿½    ï¿½ ï¿½      ï¿½     ");
-	gotoxy(x,y++);cprintf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½      ï¿½    ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ï¿½ ");
+	gotoxy(x,y++);cprintf("ÚÄÄÄÄÄ ÚÄÄÄÄ¿ ÚÄÄÄÄ¿ ÚÄÄÄÄ  ÚÄÄÄÄ ");
+	gotoxy(x,y++);cprintf("³      ³    ³ ³    ³ ³      ³     ");
+	gotoxy(x,y++);cprintf("ÀÄÄÄÄ¿ ÃÄÄÄÄÙ ÃÄÄÄÄ´ ³      ÃÄÄÄÄ ");
+	gotoxy(x,y++);cprintf("     ³ ³      ³    ³ ³      ³     ");
+	gotoxy(x,y++);cprintf("ÄÄÄÄÄÙ ³      ³    ³ ÀÄÄÄÄ  ÀÄÄÄÄ ");
 
 	x=10,y=13;
 	textcolor(13+BLINK);
-	gotoxy(x,y++);cprintf(" ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä¿  ï¿½%c%c%c%c%c%c%cï¿½ ï¿½ï¿½ï¿½ï¿½Ä¿ ï¿½ï¿½ï¿½ï¿½,  ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½Ä¿  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ",4,4,4,4,4,4,4);
-	gotoxy(x,y++);cprintf("   ï¿½   ï¿½    ï¿½  ï¿½ï¿½%c   %cï¿½ï¿½ ï¿½    ï¿½ ï¿½    \\ ï¿½      ï¿½    ï¿½  ï¿½      ",4,4);
-	gotoxy(x,y++);cprintf("   ï¿½   ï¿½    ï¿½   ï¿½ï¿½%c %cï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½Ä´ ï¿½    ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½Ä¿  ",4,4);
-	gotoxy(x,y++);cprintf("   ï¿½   ï¿½    ï¿½    ï¿½ï¿½%cï¿½ï¿½   ï¿½    ï¿½ ï¿½    / ï¿½      ï¿½'\\          ï¿½  ",4);
-	gotoxy(x,y++);cprintf(" ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½    ï¿½     ï¿½ï¿½ï¿½    ï¿½    ï¿½ ï¿½ï¿½ï¿½ï¿½'  ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½   \\   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ");
+	gotoxy(x,y++);cprintf(" ÄÄÂÄÄ ÚÄÄÄÄ¿  ³%c%c%c%c%c%c%c³ ÚÄÄÄÄ¿ ÚÄÄÄ,  ÚÄÄÄÄ  ÚÄÄÄÄ¿  ÚÄÄÄÄÄ  ",4,4,4,4,4,4,4);
+	gotoxy(x,y++);cprintf("   ³   ³    ³  ú³%c   %c³ú ³    ³ ³    \\ ³      ³    ³  ³      ",4,4);
+	gotoxy(x,y++);cprintf("   ³   ³    ³   ú³%c %c³ú  ÃÄÄÄÄ´ ³    ³ ÃÄÄÄÄ  ÃÄÄÄÄÙ  ÀÄÄÄÄ¿  ",4,4);
+	gotoxy(x,y++);cprintf("   ³   ³    ³    ú³%c³ú   ³    ³ ³    / ³      ³'\\          ³  ",4);
+	gotoxy(x,y++);cprintf(" ÄÄÁÄÄ ³    ³     ú³ú    ³    ³ ÀÄÄÄ'  ÀÄÄÄÄ  ³   \\   ÄÄÄÄÄÙ  ");
 	getch();
 
 
@@ -1570,16 +1570,16 @@ void p3()
 	cprintf("THE ENEMY");
 	textcolor(LB);
 	gotoxy(x+2,y+3);
-	cprintf("ï¿½");
+	cprintf("Û");
 	textcolor(Y+BLINK);
 	gotoxy(x+3,y+3);
-	cprintf("ï¿½");
+	cprintf("°");
 	textcolor(LB);
 	gotoxy(x+4,y+3);
-	cprintf("ï¿½");
+	cprintf("Û");
 	textcolor(R);
 	gotoxy(x,y+4);
-	cprintf("   ï¿½  " );
+	cprintf("   Ø  " );
 	textcolor(W);
 	gotoxy(x+8,y+3);
 	cprintf("- A brilliant piece of engineering;we still havent figuerd out how ");
@@ -1601,7 +1601,7 @@ void p3()
 	y++;
 	textcolor(Y);
 	gotoxy(x+3,y+10);
-	cprintf("ï¿½ ");
+	cprintf("³ ");
 	textcolor(W);
 	gotoxy(x+8,y+10);
 	cprintf("- a special nuclear fusion waepon designed for close combat;a few ");
@@ -1629,39 +1629,39 @@ void p4()
 	cprintf("The Defenders(You)   ");
 	textcolor(W);
 	gotoxy(x+3,y+2);
-	cprintf("ï¿½");
+	cprintf("³");
 
 	textcolor(R);
 	gotoxy(x+2,y+3);
-	cprintf("ï¿½");
+	cprintf("É");
 
 	textcolor(R);
 	gotoxy(x+3,y+3);
-	cprintf("ï¿½");
+	cprintf("Î");
 
 	textcolor(R);
 	gotoxy(x+4,y+3);
-	cprintf("ï¿½" );
+	cprintf("»" );
 
 	textcolor(B);
 	gotoxy(x+1,y+4);
-	cprintf("ï¿½");
+	cprintf("Å");
 
 	textcolor(G);
 	gotoxy(x+2,y+4);
-	cprintf("ï¿½");
+	cprintf("É");
 
 	textcolor(R);
 	gotoxy(x+3,y+4);
-	cprintf("ï¿½");
+	cprintf("Î");
 
 	textcolor(G);
 	gotoxy(x+4,y+4);
-	cprintf("ï¿½" );
+	cprintf("»" );
 
 	textcolor(B);
 	gotoxy(x+5,y+4);
-	cprintf("ï¿½");
+	cprintf("Å");
 
 	textcolor(W);
 	gotoxy(x+8,y+3);
