@@ -1,4 +1,4 @@
-# Space-Inavders
+# Space-Invaders
 A MS-DOS Game created in Turbo C++ 
 
 (no graphics library used , it all ASCII ;-) )
