@@ -9,4 +9,3 @@ A MS-DOS Game created in Turbo C++
 
 *ignore the warnings*
 
-P.S some ASCII characters have been messed by UTF-8 , will fix that problem soon...

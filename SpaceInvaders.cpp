@@ -411,9 +411,9 @@ SHIPS::NODE::NODE(char c)			//Player
 	health=20.0;
 	velocity_x=1;
 	velocity_y=0;
-	char a[3][5]={       "  ≥  ",
-			     " …Œª ",
-			     "≈…Œª≈"   };
+	char a[3][5]={      ' ',' ',179,' ',' ',
+			            ' ',201,206,186,' ',
+			            197,201,206,186,197  };
 
 	char clr[3][5]={    0,0,W,0,0,
 			    0,R,R,R,0,
@@ -442,8 +442,8 @@ SHIPS::NODE::NODE()                          //Enemy ships
 	velocity_x=0.8;
 	velocity_y=0.2;
 
-	char a[2][3]={    "€∞€",
-			  " ÿ "  };
+	char a[2][3]={    219,' ',219,
+	        		  ' ',216,' '  };
 
 	char clr[2][3]={ LB,Y+BLINK,LB,
 			   0,R,0        };
@@ -722,13 +722,13 @@ BULLETS::NODE::NODE(char t,char xn, float yn)
 		case  1 : velocity=1;
 			  color=PK;
 			  damage=-2;
-			  ch='';
+			  ch=31;
 			  break;
 
 		case  2 : velocity=1;
 			  color=Y;
 			  damage=-4;
-			  ch='≥';
+			  ch=179;
 			  break;
 
 		case 10 : velocity=0.5;
